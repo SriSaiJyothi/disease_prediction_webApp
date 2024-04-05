@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+</head>
+<body>
+    <h1>{{disease.disease_name}}</h1>
+
+    <!-- User input form -->
+    <form method="POST" action="{% url 'disease_form' disease.id %}">
+        {% csrf_token %}
+        {{form.as_p }}
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Display prediction result -->
+    <!--{% if diabetes_result %}
+    <h2>Prediction Result</h2>
+    <p>{{ diabetes_result }}</p>
+    {% endif %}-->
+</body>
+</html>
+   
