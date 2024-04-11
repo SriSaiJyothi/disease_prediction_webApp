@@ -88,7 +88,8 @@ def diabetes_prediction(request,prediction_instance_id):
         else:
                diabetes_result="The model predicts that patient is Non-diabetic."
         # Render a template to display the results
-        return HttpResponse(diabetes_result)
+        #return HttpResponse(diabetes_result)
+        return render(request,'diabetes_prediction_result.html',{'disease':"Diabetes",'prediction_result':diabetes_result})
 
    
 
@@ -120,7 +121,8 @@ def heart_disease_prediction(request,prediction_instance_id):
         else:
                heart_disease_result="The model predicts that patient doesnt have heart disease."
         # Render a template to display the results
-        return HttpResponse(heart_disease_result)
+        #return HttpResponse(heart_disease_result)
+        return render(request,'diabetes_prediction_result.html',{'disease':"Heart disease",'prediction_result':heart_disease_result})
 
 def parkinsons_disease_prediction(request,prediction_instance_id):
    instance_parkinsons=ParkinsonsDiseasePrediction.objects.get(pk=prediction_instance_id)
@@ -160,7 +162,9 @@ def parkinsons_disease_prediction(request,prediction_instance_id):
    else:
                parkinsons_result="The model predicts that patient doesn't have parkinsons."
         # Render a template to display the results
-   return HttpResponse(parkinsons_result)
+   #return HttpResponse(parkinsons_result)
+   return render(request,'diabetes_prediction_result.html',{'disease':" Parkinsons disease",'prediction_result':parkinsons_result})
+
     
 def Hepatitis_disease_prediction(request,prediction_instance_id):
             instance_hepatitis=HepatitisDieasePrediction.objects.get(pk=prediction_instance_id)
@@ -192,7 +196,8 @@ def Hepatitis_disease_prediction(request,prediction_instance_id):
                    hepatitis_result="The model predicts that patient doesnt have hepatitis."
             else:
                    hepatitis_result="The model predicts that patient  have hepatitis."
-            return HttpResponse(hepatitis_result)
+            #return HttpResponse(hepatitis_result)
+            return render(request,'diabetes_prediction_result.html',{'disease':" Hepatitis disease",'prediction_result':hepatitis_result})
                    
 
       

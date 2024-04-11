@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,45 @@
   <form action="{% url  'disease_form' disease.id  %}" method="get">
     {%csrf_token%}
         <button type="submit">{{disease.disease_name}}</button>
+    </form>
+    {% endfor %}
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body {
+            background-color: #f28696(0, 51, 255, 0.638);
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: navy;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4ca2af;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiple Disease Prediction System</h1>
+    {% for disease in diseases %}
+    <form action="{% url 'disease_form' disease.id %}" method="get">
+        {% csrf_token %}
+        <button type="submit">{{ disease.disease_name }}</button>
     </form>
     {% endfor %}
 </body>

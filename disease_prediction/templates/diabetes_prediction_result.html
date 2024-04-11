@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,5 +10,68 @@
     <h2>Prediction Result</h2>
     <p>{{ diabetes_result }}</p>
     {% endif %}
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{disease.disease-name} Prediction Result</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: navy;
+            text-align: center;
+        }
+        .result-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .result {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .result-text {
+            font-size: 18px;
+            color: #333;
+        }
+        .result-message {
+            font-size: 16px;
+            color: #555;
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Prediction Result</h1>
+        <div class="result">
+            <p class="result-text">{{prediction_result}}</p>
+            <!--<p class="result-message">The model predicts whether the patient is having {disease.disease_name} or not.</p>-->
+        </div>
+        <a href="{% url 'index' %}" class="back-button">Back to Main Page</a>
+    </div>
 </body>
 </html>
